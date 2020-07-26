@@ -1,0 +1,80 @@
+<section name="Validation report">
+  <field name="Summary">
+  </field>
+  <table>
+    <tr>
+      <td value="Failed" bgcolor="#EBEBE9" fontattribute="bold" align="center"/>
+      <td value="Passed" bgcolor="#EBEBE9" fontattribute="bold" align="center"/>
+      <td value="Skipped" bgcolor="#EBEBE9" fontattribute="bold" align="center"/>
+    </tr>
+    <tr>
+      <td value="11" fontcolor="#CC2D30" fontattribute="bold" align="center"/>
+      <td value="6" fontcolor="#04773B" fontattribute="bold" align="center"/>
+      <td value="0" fontcolor="#FE7031" fontattribute="bold" align="center"/>
+    </tr>
+  </table>
+      <field name="Failed rules">
+      </field>
+      <table>
+        <tr>
+          <td value="Severity" bgcolor="#EBEBE9" fontattribute="bold" align="center"/>
+          <td value="Rule Id" bgcolor="#EBEBE9" fontattribute="bold" align="center"/>
+          <td value="Message" bgcolor="#EBEBE9" fontattribute="bold" align="center"/>
+        </tr>
+            <tr>
+              <td value="MINOR" fontattribute="bold" align="center"/>
+              <td value="RULE_002" />
+              <td value="(name=&quot;api-console&quot;) Check if flow names match the naming convention - Attribute name matches regexp ^[a-zA-Z]*Flow$" />
+            </tr>
+            <tr>
+              <td value="MINOR" fontattribute="bold" align="center"/>
+              <td value="RULE_002" />
+              <td value="(name=&quot;get:\ping:api-config&quot;) Check if flow names match the naming convention - Attribute name matches regexp ^[a-zA-Z]*Flow$" />
+            </tr>
+            <tr>
+              <td value="MINOR" fontattribute="bold" align="center"/>
+              <td value="RULE_002" />
+              <td value="(name=&quot;post:\njtest:application\json:api-config&quot;) Check if flow names match the naming convention - Attribute name matches regexp ^[a-zA-Z]*Flow$" />
+            </tr>
+            <tr>
+              <td value="MINOR" fontattribute="bold" align="center"/>
+              <td value="RULE_003" />
+              <td value="(host=&quot;0.0.0.0&quot;) Check if http-host in http:listener-connection is not hardcoded - Attribute host with value ${http.host} is required." />
+            </tr>
+            <tr>
+              <td value="MINOR" fontattribute="bold" align="center"/>
+              <td value="RULE_004" />
+              <td value="(port=&quot;8081&quot;) Check if http-port in http:listener-connection is not hardcoded - Attribute port with value ${http.port} is required." />
+            </tr>
+            <tr>
+              <td value="MINOR" fontattribute="bold" align="center"/>
+              <td value="RULE_006" />
+              <td value="Check if HTTP Status codes have been properly set inside the exception handler" />
+            </tr>
+            <tr>
+              <td value="MINOR" fontattribute="bold" align="center"/>
+              <td value="RULE_002" />
+              <td value="Check if credentials and resources are managed with application properties" />
+            </tr>
+            <tr>
+              <td value="MINOR" fontattribute="bold" align="center"/>
+              <td value="RULE_004" />
+              <td value="Check for the definition of Global exception strategies" />
+            </tr>
+            <tr>
+              <td value="MINOR" fontattribute="bold" align="center"/>
+              <td value="RULE_005" />
+              <td value="Reference global exception handlers" />
+            </tr>
+            <tr>
+              <td value="MINOR" fontattribute="bold" align="center"/>
+              <td value="RULE_006" />
+              <td value="Check if HTTP Status codes have been properly set inside the exception handler" />
+            </tr>
+            <tr>
+              <td value="MINOR" fontattribute="bold" align="center"/>
+              <td value="RULE_009" />
+              <td value="Use AutoDiscovery to register the app in API manager" />
+            </tr>
+      </table>
+</section>

@@ -1,0 +1,46 @@
+#%RAML 1.0
+title: Mule Validation Test SAPI
+version: v1
+description: System API used to test Mule Validation Plugin 
+
+mediaType:
+  - application/json
+
+documentation: 
+  - title: Overview
+    content:  System API used to test Mule Validation Plugin 
+
+protocols:
+  - HTTP
+
+types:
+#error  
+
+/ping:
+  get:
+    displayName: "Health Check Method"
+    headers:
+      client_id: 
+        required: true
+      client_secret:
+        required: true
+    
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              !include examples/healthCheckResponse.json
+              
+/njtest:
+  description: 'This resource helps to test validation api'
+
+  post:
+    description:  'This method helps to post request to system A and get the response '
+    body:
+      application/json:
+    responses:
+      200:
+        body:
+          application/json:
+    

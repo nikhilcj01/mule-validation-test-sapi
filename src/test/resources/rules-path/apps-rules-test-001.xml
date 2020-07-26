@@ -1,0 +1,164 @@
+<rules>
+	<rule>
+		<id>RULE_001</id>
+		<description>Check if APIKit was used to auto-generate the implementation interface</description>
+		<group>CONFIG</group>
+		<severity>MAJOR</severity>
+		<required>true</required>
+		<node>
+			<namespace>apikit</namespace>
+			<name>config</name>
+		</node>
+	</rule>
+	<rule>
+		<id>RULE_002</id>
+		<description>Check if flow names match the naming convention</description>
+		<node>
+		  <namespace></namespace>
+		  <name>flow</name>
+		</node>
+		<required>false</required>
+		<attributes>
+		  <attribute name="name" operation="match" value="^[a-zA-Z]*Flow$" />
+		</attributes>
+	</rule>
+  <rule>
+    <id>RULE_003</id>
+    <description>Check if http-host in http:listener-connection is not hardcoded</description>
+    <node>
+      <namespace>http</namespace>
+      <name>listener-connection</name>
+    </node>
+    <required>false</required>
+    <attributes>
+      <attribute name="host" operation="equal" value="${http.host}" />
+    </attributes>
+  </rule>
+  <rule>
+    <id>RULE_004</id>
+    <description>Check if http-port in http:listener-connection is not hardcoded</description>
+    <node>
+      <namespace>http</namespace>
+      <name>listener-connection</name>
+    </node>
+    <required>false</required>
+    <attributes>
+      <attribute name="port" operation="equal" value="${http.port}" />
+    </attributes>
+  </rule>
+    <rule>
+    <id>RULE_005</id>
+    <description>Check if batch:job names match the naming convention</description>
+    <node>
+      <namespace>batch</namespace>
+      <name>job</name>
+    </node>
+    <required>false</required>
+    <attributes>
+      <attribute name="jobName" operation="match" value="^[a-zA-Z]*Batch$" />
+    </attributes>
+  </rule>
+  <rule>
+		<id>RULE_006</id>
+		<description>Check if HTTP Status codes have been properly set inside the exception handler</description>
+		<node>
+			<namespace>apikit</namespace>
+			<name>mapping</name>
+		</node>
+		<required>true</required>
+		<attributes>
+			<attribute name="statusCode" securePropertyAssertions="match" value="(404|405|415|406|400|500)" />
+		</attributes>
+	</rule>
+	<rule>
+		<id>RULE_002</id>
+		<description>Check if credentials and resources are managed with application properties</description>
+		<node>
+			<namespace>context</namespace>
+			<name>property-placeholder</name>
+		</node>
+		<required>true</required>
+		<attributes>
+			<attribute name="location" securePropertyAssertions="match" value="^.*properties$" />
+		</attributes>
+	</rule>
+	<rule>
+		<id>RULE_003</id>
+		<description>Check for not hardcoded encryption Key when using Mule Credentials Vault</description>
+		<node>
+			<namespace>secure-property-placeholder</namespace>
+			<name>config</name>
+		</node>
+		<required>false</required>
+		<attributes>
+			<attribute name="location" securePropertyAssertions="match" value="^.*properties$" />
+			<attribute name="key" securePropertyAssertions="equal" value="${encryptionKey}" />
+		</attributes>
+	</rule>
+	<rule>
+		<id>RULE_004</id>
+		<description>Check for the definition of Global exception strategies</description>
+		<node>
+			<namespace>apikit</namespace>
+			<name>mapping-exception-strategy</name>
+		</node>
+		<required>true</required>
+	</rule>
+	<rule>
+		<id>RULE_005</id>
+		<description>Reference global exception handlers</description>
+		<node>
+			<namespace></namespace>
+			<name>exception-strategy</name>
+		</node>
+		<required>true</required>
+	</rule>
+	<rule>
+		<id>RULE_006</id>
+		<description>Check if HTTP Status codes have been properly set inside the exception handler</description>
+		<node>
+			<namespace>apikit</namespace>
+			<name>mapping</name>
+		</node>
+		<required>true</required>
+		<attributes>
+			<attribute name="statusCode" securePropertyAssertions="match" value="(404|405|415|406|400|500)" />
+		</attributes>
+	</rule>
+	<rule>
+		<id>RULE_007</id>
+		<description>Check if data transformations are stored in external DWL files (payload)</description>
+		<node>
+			<namespace>ee</namespace>
+			<name>set-payload</name>
+		</node>
+		<required>false</required>
+		<attributes>
+			<attribute name="resource" securePropertyAssertions="match" value="^classpath.*dwl$" />
+		</attributes>
+	</rule>
+	<rule>
+		<id>RULE_008</id>
+		<description>Check if data transformations are stored in external DWL files (variable)</description>
+		<node>
+			<namespace>ee</namespace>
+			<name>set-variable</name>
+		</node>
+		<required>false</required>
+		<attributes>
+			<attribute name="resource" securePropertyAssertions="match" value="^classpath.*dwl$" />
+		</attributes>
+	</rule>
+	<rule>
+		<id>RULE_009</id>
+		<description>Use AutoDiscovery to register the app in API manager</description>
+		<node>
+			<namespace>api-platform-gw</namespace>
+			<name>api</name>
+		</node>
+		<required>true</required>
+		<attributes>
+			<attribute name="create" securePropertyAssertions="equal" value="true" />
+		</attributes>
+	</rule>
+</rules>
